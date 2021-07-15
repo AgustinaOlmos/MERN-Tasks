@@ -1,0 +1,23 @@
+por si escriben algo en el formulario y luego le dan obtener cuenta. y chrome les pide guardar contraseña.
+
+para corregir esto crean la funcion reset, para limpiar el formulario de esta forma.
+
+
+
+en el link ponen asi:
+
+    <Link to={'/nueva-cuenta'} className="enlace-cuenta" onChange={reset}>
+                    Obtener cuenta
+     </Link>
+luego en el formulario le dan un id:
+
+ <form onSubmit={onSubmit} id="form">
+
+
+y luego la funcion que hace el reset para que chrome y otro navegador no te pida guardar contraseña
+
+
+
+ const reset = () => {
+        this.form.reset();
+    }

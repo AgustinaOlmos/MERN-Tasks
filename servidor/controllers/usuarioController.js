@@ -17,18 +17,15 @@ exports.crearUsuario = async (req, res) => {
     try {
         // Revisar que el usuario registrado sea unico
         let usuario = await Usuario.findOne({ email })
-
         if (usuario) {
             return res.status(400).json({ msg: 'El ususario ya existe' })
         }
 
         // Crear un nuevo usuario
         usuario = new Usuario(req.body)
-
         // Hashear el password
         const salt = await bcryptjs.genSalt(10)
         usuario.password = await bcryptjs.hash(password, salt)
-
         // Guardar el usuario
         await usuario.save()
 
@@ -43,7 +40,6 @@ exports.crearUsuario = async (req, res) => {
             expiresIn: 3600 // 1 hora
         }, (error, token) => {
             if (error) throw error
-
             // Msj de confirmacion
             res.json({ token })
         })

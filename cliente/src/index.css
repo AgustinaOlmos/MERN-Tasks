@@ -4,8 +4,8 @@
   --gris2: #2f3848;
   --gris3: #1a202d;
   --negro: #000000;
-  --headingFont: 'Raleway', sans-serif;
-  --textFont: 'Roboto', sans-serif;
+  --headingFont:'Raleway', sans-serif;
+  --textFont:  'Roboto', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -87,6 +87,9 @@ a {
   display: block;
   background-color: transparent;
 }
+.cerrar-sesion {
+  color: var(--blanco);
+}
 
 @media (min-width: 768px) {
   .contenedor-app {
@@ -136,6 +139,7 @@ aside  {
 .app-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--gris2);
   padding: 4rem;
 }
@@ -327,8 +331,7 @@ aside  {
   opacity: .7;
 }
 
-/* ALERTA */
-/* .alerta {
+.alerta {
   position: fixed;
   top: 0;
   left: 0;
@@ -357,4 +360,4 @@ aside  {
 .alerta-error {
   background-color: rgb(230, 78, 78);
   color: var(--blanco);
-} */
+}

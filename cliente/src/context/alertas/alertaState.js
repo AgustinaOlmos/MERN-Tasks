@@ -20,6 +20,7 @@ const AlertaState = props => {
             }
         })
 
+        // Dsps de 5seg se va el alerta
         setTimeout(() => {
             dispatch({
                 type: OCULTAR_ALERTA

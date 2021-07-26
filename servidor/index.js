@@ -1,11 +1,15 @@
 const express = require('express')
 const conectarDB = require('./config/db')
+const cors = require('cors')
 
 // Crear el servidor
 const app = express()
 
 // Conectar a la base de datos
 conectarDB()
+
+// Habilitar CORS -- El error de CORS detecta que tenemos el front en una URL y el back en otra
+app.use(cors())
 
 // Habilitar express.json
 app.use(express.json({ extended: true }))
